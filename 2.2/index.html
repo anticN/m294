@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const names = ["Franz", "Jenny", "Karen", "Joseph", "Richard", "Anne"];
+        console.log(names.sort());
+
+        const upperNames = names.map(element => {return element.toUpperCase()});
+        console.log(upperNames);
+
+        function toCaesar(input){
+            const characters = input.split("");
+            const newCharacters = characters.map((character) => {
+                if(character == character.toUpperCase()){
+                return String.fromCharCode((character.charCodeAt(0) -65 + 13) % 26 + 65);
+        }else if(character == character.toLowerCase()){
+            return String.fromCharCode((character.charCodeAt(0) -97 + 13) % 26 + 97);
+        }})
+            return newCharacters.join("");
+            //console.log(newCharacters)
+        } 
+        for(let i = 0;i<names.length;i++){
+            console.log(toCaesar(names[i]))
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
