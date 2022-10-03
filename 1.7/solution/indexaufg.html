@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const person = prompt("Gib deinen Namen ein: ");
+        const date = new Date().getHours();
+        
+      if (date < 5) {
+        alert(`Guten Nacht ${person}`);
+      } else if (date < 12) {
+        alert(`Guten Morgen ${person}`);
+      } else if (date < 18) {
+        alert(`Guten Tag ${person}`);
+      } else if (date < 22) {
+        alert(`Guten Abend ${person}`);
+      } else {
+        alert(`Guten Nacht ${person}`);
+      }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
