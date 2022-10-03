@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        do{
+        let rand_nr = Math.floor(Math.random()*100)
+        let user_nr = prompt("Type in your number: ")
+        if(rand_nr == user_nr){
+            alert(`Du hast die Zahl erraten: ${rand_nr}`)
+        }else if(user_nr < rand_nr){
+            alert(`Deine Zahl war zu klein. ${rand_nr} war die gesuchte Zahl`)
+        }else{
+            alert(`Deine Zahl war zu gross. ${rand_nr} war die gesuchte Zahl`)
+        }}while(user_nr != rand_nr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
