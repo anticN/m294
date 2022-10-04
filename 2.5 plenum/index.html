@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:nth-child(odd){
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const titleInput = document.querySelector("#titleInput")
+            const createButton = document.querySelector("#createButton")
+            const todolist = document.querySelector("#todolist")
+
+            createButton.addEventListener("click", () => {
+                const newTodoItem = document.createElement("li");
+                newTodoItem.innerText = titleInput.value;
+                todolist.appendChild(newTodoItem)
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="titleInput" name="title">
+    <button id="createButton">Erstellen</button>
+    <ul id="todolist">
+
+    </ul>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1.2/main.css">
+    <title>Spoofify</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+            const changeAlbum = document.getElementById("changeAlbum");
+            const changeTrack = document.getElementById("changeTrack");
+            const delTrack = document.querySelector("#delTrack");
+            const delAlbum = document.getElementsByClassName(".delAlbum");
+            //const newTrack = document.querySelector("#newTrack");
+            //const newAlbum = document.querySelector("#newAlbum");
+
+            changeAlbum.innerText = "Test";
+            changeTrack.innerText = "Noch ein Test"
+            delTrack.remove()
+            delAlbum.remove()
+            const newTrack = document.createElement("li");
+            newTrack.innerText = "Neues Lied";
+            newSong.appendChild(newTrack)
+
+            const newAlbumTitle = document.createElement("h2");
+            newAlbumTitle.innerText = "Neues Album"
+
+            const newAlbum = document.createElement("ol");
+            newAlbum.innerText = "Test"
+            newAlbum.appendChild(newAlbum)
+
+      })
+      </script>
+</head>
+<body>
+    <h1>Spoofify</h1>
+
+    <p>Welcome to Spoofify, <em>the rip-off music streaming service</em> of ICT Module 291!</p>
+
+    <h1>Top Albums of this week</h1>
+    <ol id="top-albums">
+        <li class="top-album"><a href="#album--1"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=1"></a>
+        </li>
+        <li class="top-album"><a href="#album--2"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=2"></a>
+        </li>
+        <li class="top-album"><a href="#album--3"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=3"></a>
+        </li>
+        <li class="top-album"><a href="#album--4"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=4"></a>
+        </li>
+        <li class="top-album"><a href="#album--5"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=5"></a>
+        </li>
+        <li class="top-album"><a href="#album--6"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=6"></a>
+        </li>
+        <li class="top-album"><a href="#album--7"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=7"></a>
+        </li>
+        <li class="top-album"><a href="#album--8"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=8"></a>
+        </li>
+        <li class="top-album"><a href="#album--9"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=9"></a>
+        </li>
+        <li class="top-album"><a href="#album--10"><img
+              src="https://loremflickr.com/480/480/cd,album,cover?random=10"></a>
+        </li>
+      </ol>
+    <h1>Albums</h1>
+
+    <h2 id="changeAlbum">The Beatles - Help!</h2>
+    <ol id="newSong">
+        <li id="changeTrack">Help (2:18)</li>
+        <li id="delTrack">The Night Before (2:34)</li>
+        <li>You've got to hide your love away (2:09)</li>
+        <li>I need you (2:28)</li>
+        <li>Another Girl (2:05)</li>
+        <li>You're going to lose that girl (2:18)</li>
+        <li>Ticket to ride (3:09)</li>
+    </ol>
+
+    <h2 class="delAlbum">Nirvana - Nevermind</h2>
+    <ol class="delAlbum">
+        <li>Smells like Teen Spirit (5:01)</li>
+        <li>In Bloom (Nevermind Version) (4:14)</li>
+        <li>Come as you Are (3:38)</li>
+        <li>Breed (Album Version) (3:03)</li>
+        <li>Lithium (4:16)</li>
+        <li>Polly (Album Version) (2:53)</li>
+    </ol>
+
+</body>
+</html>
