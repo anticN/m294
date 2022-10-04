@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><img src="https://steigerlegal.ch/wp-content/uploads/2019/09/kanton-zuerich_logo_002.jpg" width="100px"> Kanton Zürich<br>Sicherheitsdirektion<br> Strassenverkehrsamt <hr>
+    </header>
+    <p><span><img src="https://image.migros.ch/fm-max/5b7d9324feb88552a821c9f287099c143d7ddecb/miocar-l-schild-magnetisch-hinweisschild.jpg" width="30px">ernfahrgesuch</span> für die Kategorie</p>
+    <fieldset>
+        <form name="Lehrfahrgesuch">
+            <p><label>A1</label>
+                <input type="checkbox" name="A1" id="A1" value="A1">
+            <label><b>A</b>
+                <input type="checkbox" name="A" id="A" value="A"></label>
+            <label>B1
+                <input type="checkbox" name="B1" id="B1" value="B1"></label>
+            <label><b>B</b></label>
+                <input type="checkbox" name="B" id="B" value="B">
+            <label>C1</label>
+                <input type="checkbox" name="C1" id="C1" value="C1">
+            <label><b>C</b></label>
+                <input type="checkbox" name="C" id="C" value="C"></p>
+            
+            <p><label>Name:</label><br>
+                <input type="text" name="name" id="name" maxlength="50" size="150" required>
+                </p>
+            <p><label>Vorname:</label><br>
+                <input type="text" name="vorname" id="vorname" maxlength="50" size="150" required>
+                </p>
+            <p><label>Strasse, Nr:</label><br>
+                <input type="text" name="strasse" id="strasse" maxlength="50" size="150" required>
+                </p>
+            <p><label>PLZ:</label><br>
+                <input type="text" name="plz" id="plz" maxlength="50" size="20" required>
+                <label>Ort:</label>
+                <input type="text" name="ort" id="ort" maxlength="50" size="121" required>
+                </p>
+            <p><label>Heimatort(e)/Kanton (Ausländer Heimatstaat):</label><br>
+                <input type="text" name="heimatort" id="heimatort" maxlength="50" size="150" required>
+                </p>
+            <p><label>Geburtsdatum<br>(Tag/Monat/Jahr)</label>
+                <input type="date" name="geburtsdatum" id="geburtsdatum" maxlength="50" size="60">
+                <label>
+                <input type="radio" name="geschlecht" id="weiblich" value="weiblich">weiblich
+                <input type="radio" name="geschlecht" id="männlich" value="männlich">männlich</label>
+                <label>Telefon</label>
+                <input type="tel" name="telefon" id="telefon"></p>
+            <p><label>Früherer Wohnort</label>
+                <input type="text" name="früherWohnOrt" id="früherWohnOrt" maxlength="50" size="50">
+                <label>bis</label>
+                <input type="date" name="datumFrühererWohnort" id="datumFrühererWohnort" maxlength="50" size="50"></p>
+
+        </form>
+    </fieldset>
+</body>
+</html>
