@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //function addPokemon(pokemon){
+            
+        //}
+
+        const createCell = (cellText) => {
+            const cell = document.createElement("td");
+            cell.innerText = cellText;
+            return cell;
+        }
+
+        const addPokemon = (pokemon) => {
+            const display = document.getElementById("display");
+            const tableRow = document.createElement("tr");
+
+            tableRow.append(
+                createCell(pokemon.id), 
+                createCell(pokemon.name), 
+                createCell(pokemon.weight), 
+                createCell(pokemon.height));
+
+            display.appendChild(tableRow)
+
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const pokemonForm = document.getElementById("pokemonForm")
+
+            pokemonForm.addEventListener("submit", () => {
+                event.preventDefault();
+                const pokemonFormData = new FormData(pokemonForm);
+
+                fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonFormData.get("identifier")}/`)
+                .then((response) => {
+                    if(response.status === 404){
+                        alert("Dieses Pokemon gibt es nicht")
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    addPokemon(data)
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Erfahre mehr über dein Pokemon</h1>
+    <form id="pokemonForm">
+        <label for="pokeInput">Enter your Pokemon-ID or name</label>
+        <input type="text" name="identifier" id="identifierInput">
+        <button type="submit">Anfrage senden</button>
+    </form>
+    <h2>Informationen zum abgefragten Pokemon</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Grösse</th>
+                <th>Gewicht</th>
+            </tr>
+        </thead>
+        <tbody id="display"></tbody>
+    </table>
+</body>
+</html>

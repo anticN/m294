@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let pokeData;
+        let pokeInput
+
+        
+
+        document.addEventListener("DOMContentLoaded", () => {
+            pokeInput = document.getElementById("pokeInput");
+            //pokeLink = "https://pokeapi.co/api/v2/pokemon/${pokeInput}/";
+            const pokeName = document.getElementById("pokeName");
+            const pokeWeight = document.getElementById("pokeWeight");
+            const pokeHeight = document.getElementById("pokeHeight");
+
+            if(pokeInput.value){
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokeInput.value}/`)
+        .then((response) => {
+            return response.json()
+            console.log(response)
+        })
+        .then((data) => {
+            pokeData = data;
+        });
+    }
+
+        
+            pokeInput.addEventListener("blur", () => {
+                if(pokeData){
+                    console.log(pokeData)
+                    const pokeEntry = pokeData.find((entry) => entry.id == pokeInput.value);
+                    pokeName.value = pokeEntry.name;
+                    pokeWeight.value = pokeEntry.weight;
+                    pokeHeight.value = pokeEntry.height; 
+                }
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Erfahre mehr über dein Pokemon</h1>
+    <form id="pokemonForm">
+        <label for="pokeInput">Enter your Pokemon-ID or name</label>
+        <input type="text" name="pokeid" id="pokeInput"><br><br><br>
+        <button type="submit"></button>
+    </form>
+    <h2>Informationen zum abgefragten Pokemon</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Grösse</th>
+                <th>Gewicht</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
